@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Small Things Farm — a family market garden near Columbus, Ohio</title>
+<meta name="description" content="Small Things Farm is a family market garden breaking ground near Columbus, Ohio in 2027. Honest vegetables for Saturday mornings — follow along from the very first shovel.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'%3E%3Ccircle cx='17' cy='17' r='17' fill='%23a95a37'/%3E%3Ctext x='17' y='22' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='14' fill='%23f5efe4'%3Est%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- hero on green -->
+<div class="green-band">
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">st</span>
+        <span class="brand-name">Small Things Farm</span>
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div>
+        <div class="badge">BREAKING GROUND IN 2027</div>
+        <h1>The small things make a big difference.</h1>
+        <p class="hero-lede">A family farm taking shape near Columbus, Ohio. We&rsquo;re leaving the hustle behind to grow honest vegetables for Saturday mornings &mdash; and we&rsquo;d love for you to follow along from the very first shovel.</p>
+        <!-- TODO: email signup — replace USERNAME with your Buttondown username
+             (sign up free at https://buttondown.com, then Settings → your username).
+             On success, Buttondown shows its own "check your email" confirmation page.
+             See README.md → "Finish the email signup" for details. -->
+        <form class="signup-form" action="https://buttondown.com/api/emails/embed-subscribe/USERNAME" method="post">
+          <input type="email" name="email" required placeholder="your@email.com" aria-label="Email address">
+          <button type="submit">Follow along</button>
+        </form>
+        <div class="form-note">A few letters a season. First dibs on market dates.</div>
+      </div>
+      <div class="hero-photo">
+        <!-- Picture frame: swap this <svg> for
+             <img src="images/us-on-the-land.jpg" alt="The two of us, boots on, on the land" style="width:100%;display:block;">
+             when you have a real photo (portrait, roughly 340×420). -->
+        <svg class="photo-placeholder" viewBox="0 0 340 420" role="img" aria-label="Breaking Ground in 2027" style="background:#3d4a33;border:1px solid #4a5a3e;">
+          <defs>
+            <pattern id="ph-hero" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+              <rect width="12" height="12" fill="#3d4a33"></rect>
+              <rect width="6" height="12" fill="#42513a"></rect>
+            </pattern>
+          </defs>
+          <rect width="340" height="420" fill="url(#ph-hero)"></rect>
+          <text x="170" y="200" text-anchor="middle" font-family="Spectral, Georgia, serif" font-weight="600" font-size="26" fill="#c9cfae">Breaking Ground</text>
+          <text x="170" y="236" text-anchor="middle" font-family="Spectral, Georgia, serif" font-weight="600" font-size="26" fill="#c9cfae">in 2027</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- three promises -->
+<section class="promises" aria-label="Our promises">
+  <div class="container">
+    <div class="promise-card">
+      <div class="card-eyebrow">GROWN BY HAND</div>
+      <div class="card-title">Small beds, big care</div>
+      <p>Ten intensive beds tended by hand &mdash; small enough that every plant gets noticed, every week.</p>
+    </div>
+    <div class="promise-card promise-card--ochre">
+      <div class="card-eyebrow">PICKED THAT MORNING</div>
+      <div class="card-title">Saturday-fresh</div>
+      <p>Everything on the table is cut or pulled at dawn the same day. That&rsquo;s the whole cold chain.</p>
+    </div>
+    <div class="promise-card promise-card--clay">
+      <div class="card-eyebrow">GROWING SLOWLY</div>
+      <div class="card-title">No hustle here</div>
+      <p>We left the always-on world on purpose. The farm grows only as fast as we can do it well.</p>
+    </div>
+  </div>
+</section>
+
+<!-- grow + timeline combined band -->
+<section class="band-2col">
+  <div class="container">
+    <div>
+      <div class="section-eyebrow">From the beds, 2027</div>
+      <h2>What we&rsquo;ll grow</h2>
+      <div class="chips">
+        <span class="chip">Salad greens</span>
+        <span class="chip">Tomatoes</span>
+        <span class="chip">Peppers</span>
+        <span class="chip">Carrots</span>
+        <span class="chip">Radishes</span>
+        <span class="chip">Garlic</span>
+        <span class="chip">Herbs</span>
+        <span class="chip">Cut flowers</span>
+        <span class="chip chip--honey">Honey, in time</span>
+      </div>
+      <p class="band-note">Planted in succession from May to the first frost, so the stand changes every week.</p>
+    </div>
+    <div>
+      <div class="section-eyebrow">The plan</div>
+      <h2>From here to harvest</h2>
+      <div class="timeline">
+        <div>
+          <div class="timeline-date">WINTER 2026 &mdash; we move in</div>
+          <div class="timeline-desc">Soil tests, seed orders, plans on the kitchen wall.</div>
+        </div>
+        <div>
+          <div class="timeline-date timeline-date--ochre">SPRING 2027 &mdash; breaking ground</div>
+          <div class="timeline-desc">The first ten beds shaped, composted, planted.</div>
+        </div>
+        <div>
+          <div class="timeline-date timeline-date--clay">SUMMER 2027 &mdash; first market</div>
+          <div class="timeline-desc">Find our stand on Saturday mornings near Columbus.</div>
+        </div>
+        <div>
+          <div class="timeline-date timeline-date--slate">2028 &amp; BEYOND &mdash; growing slowly</div>
+          <div class="timeline-desc">More beds, a small CSA, honey from our own hives.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-brand">Small Things Farm</div>
+    <div class="footer-info">Central Ohio &middot; breaking ground 2027 &middot; <a href="mailto:hello@smallthingsfarm.com">hello@smallthingsfarm.com</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
