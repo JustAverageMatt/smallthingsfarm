@@ -8,6 +8,7 @@ Columbus, Ohio, breaking ground in 2027. Plain HTML/CSS — no build step, no fr
 | File | Page |
 |---|---|
 | `index.html` | Home — hero, promises, what we'll grow, road to harvest |
+| `csa.html` | CSA shares — estimated pricing, how it works, reservations (not yet open) |
 | `about.html` | Our story — why we're leaving tech for the farm |
 | `contact.html` | Contact — email + Saturday market info |
 | `styles.css` | Shared stylesheet (design tokens + all components) |
@@ -63,6 +64,28 @@ To restore with Buttondown:
    Buttondown's "check your email to confirm" page — that's the success state.
 
 (Prefer Formspree? Use your Formspree endpoint as the form `action` instead.)
+
+## CSA reservations (Tally) — not yet open
+
+`csa.html` shows estimated share pricing and states that orders will be accepted
+once the farm is running at full capacity. When you're ready to open a **capped**
+reservation list:
+
+1. Create a free account at [tally.so](https://tally.so) and make a form with
+   fields: name, email, share size (Small / Family).
+2. In the form's **Settings → Close form**, set **Submission limit** to the number
+   of shares available, and write a custom closed message (e.g. "All shares are
+   spoken for this season — email us to join the waitlist."). Tally closes the
+   form automatically once the limit is reached.
+3. In `csa.html`, find the `TODO` comment in the reservations section and replace
+   the paragraph with the `<a class="button-link" href="https://tally.so/r/YOUR_FORM_ID">Reserve a share</a>`
+   link (the `.button-link` style is already in `styles.css`).
+
+Estimated pricing context (researched July 2026): nearby NW-Ohio CSAs charge
+~$28–35/week for a 6–8 item box (The Farm on Central $27.95, Shared Legacy $33,
+Riehm small $35); Columbus-area farms run ~$32–54/week across sizes (eQuality
+$585 full season, New Century small→large). The page's $30/wk small and $45/wk
+family estimates sit inside both bands.
 
 ## Swap in real photos
 
