@@ -40,20 +40,29 @@ is not part of the deployed site.
 4. **HTTPS** — once DNS has propagated and the certificate is issued (minutes to
    a few hours), check **Enforce HTTPS** in *Settings → Pages*.
 
-## Finish the email signup (TODO)
+## Email signup (currently removed)
 
-The signup forms post to Buttondown but need your account name:
+The email signup forms have been removed until a newsletter service is chosen.
+The styles (`.signup-form`, `.signup-band`, `.form-note`) are still in `styles.css`,
+and HTML comments mark where the forms belonged (hero on `index.html`, a
+`signup-band` section above the footer on `about.html` / `contact.html`).
+
+To restore with Buttondown:
 
 1. Create a free account at [buttondown.com](https://buttondown.com) (free up to 100 subscribers).
-2. Your username appears in your Buttondown profile/settings.
-3. In `index.html`, `about.html`, and `contact.html`, replace `USERNAME` in
-   `action="https://buttondown.com/api/emails/embed-subscribe/USERNAME"`
-   with your Buttondown username.
-4. On submit, subscribers land on Buttondown's "check your email to confirm" page —
-   that's the success state. You can customize it in Buttondown's settings.
+2. Re-add the form markup at the commented spots:
 
-(Prefer Formspree? Swap the form `action` for your Formspree endpoint instead —
-the markup needs no other changes.)
+   ```html
+   <form class="signup-form" action="https://buttondown.com/api/emails/embed-subscribe/USERNAME" method="post">
+     <input type="email" name="email" required placeholder="your@email.com" aria-label="Email address">
+     <button type="submit">Follow along</button>
+   </form>
+   ```
+
+3. Replace `USERNAME` with your Buttondown username. On submit, subscribers land on
+   Buttondown's "check your email to confirm" page — that's the success state.
+
+(Prefer Formspree? Use your Formspree endpoint as the form `action` instead.)
 
 ## Swap in real photos
 
