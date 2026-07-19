@@ -85,11 +85,10 @@ h1, h2, .card-title, .footer-brand {
 
 .site-header { padding-top: 28px; }
 
-/* the banner lockup SVG carries its own Forest ground, so it
-   blends into the band at any width */
+/* centered lockup (name + tagline, no badge) on the Forest band */
 .brand {
   display: block;
-  max-width: 1080px;
+  max-width: 660px;
   margin: 0 auto;
   padding: 0 var(--pad-x);
 }
