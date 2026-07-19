@@ -1,31 +1,38 @@
 /* ============================================================
    Small Things Farm — shared stylesheet
-   Design system extracted from "Homepage Options" option 1C,
-   "The Roadside Stand". Sharp corners throughout (no border-radius
-   except the round logo mark). No shadows.
+   Restyled to the Brand & Identity Guide v1.0 (July 2026):
+   Forest / Sage / Cream / Ochre / Bark / Gold palette,
+   Cormorant Garamond display caps, Source Serif 4 body & utility.
+   Layout is still design option 1C "The Roadside Stand".
+   Sharp corners throughout (no border-radius). No shadows.
    ============================================================ */
 
 :root {
-  --ink: #23201a;          /* text, footer bg */
-  --paper: #f5efe4;        /* page bg */
-  --card: #fffdf7;         /* card bg */
-  --green-dark: #333f2a;   /* hero / dark green */
-  --green-sage: #47563a;   /* sage green */
-  --hero-body: #dfe3cf;    /* hero body text */
-  --hero-muted: #9aa384;   /* hero muted */
-  --green-soft: #c9cfae;   /* nav inactive / accents on green */
-  --clay: #a95a37;         /* primary CTA, links */
-  --clay-dark: #8a4526;    /* CTA hover, link hover */
-  --ochre: #a9792b;
-  --slate: #4d6870;
-  --body-2: #574f42;       /* body secondary text */
-  --muted: #8c8274;
-  --hairline: #dccfba;
-  --badge-bg: #e7e7d3;     /* badge bg on green hero */
+  /* brand palette (guide §05) */
+  --forest: #2e3c23;       /* primary ink & ground */
+  --sage: #737c60;         /* secondary, backgrounds */
+  --cream: #f3e9d9;        /* paper & reversed art */
+  --ochre: #9b6223;        /* accent: dots, rules, tagline, CTAs */
+  --bark: #4d361d;         /* seed dot, deep accent, CTA hover */
+  --gold: #b0813b;         /* ochre lifted for dark grounds */
 
-  --serif: "Spectral", Georgia, serif;
-  --sans: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
-  --mono: "IBM Plex Mono", "Courier New", monospace;
+  /* derived UI tints (not brand-mark colors) */
+  --paper: var(--cream);   /* page bg */
+  --card: #faf3e6;         /* card bg — cream lifted */
+  --ink: var(--forest);    /* text */
+  --hero-body: #e2dcc8;    /* body text on forest */
+  --hero-muted: #a6ad93;   /* muted text on forest */
+  --green-soft: #c6cbb2;   /* nav inactive / accents on forest */
+  --body-2: #55503e;       /* body secondary text */
+  --muted: #8b8271;
+  --hairline: #e0d4bd;
+  --badge-bg: var(--cream);
+
+  /* type (guide §06): display + tagline Cormorant Garamond,
+     body + utility Source Serif 4 (fallback Georgia) */
+  --display: "Cormorant Garamond", Georgia, serif;
+  --body-face: "Source Serif 4", Georgia, serif;
+  --utility: "Source Serif 4", Georgia, serif;
 
   --pad-x: 60px;
 }
@@ -35,17 +42,17 @@
 body {
   margin: 0;
   background: var(--paper);
-  font-family: var(--serif);
+  font-family: var(--body-face);
   color: var(--ink);
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
-a { color: var(--clay); text-decoration: none; }
-a:hover { color: var(--clay-dark); }
+a { color: var(--ochre); text-decoration: none; }
+a:hover { color: var(--bark); }
 
-:focus-visible { outline: 2px solid var(--clay); outline-offset: 2px; }
+:focus-visible { outline: 2px solid var(--ochre); outline-offset: 2px; }
 
 .container {
   max-width: 1200px;
@@ -54,93 +61,91 @@ a:hover { color: var(--clay-dark); }
   padding-right: var(--pad-x);
 }
 
-/* ---------- header / nav (sits on the dark green band) ---------- */
+/* display headings — all caps, tracked (guide: +6 to +10% of point size) */
+h1, h2, .card-title, .footer-brand {
+  font-family: var(--display);
+  text-transform: uppercase;
+  letter-spacing: .07em;
+}
+
+/* tagline — always caps, tracked, with its period.
+   Ochre on light grounds, gold on dark. */
+.tagline {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: .24em;
+  color: var(--ochre);
+}
+
+.tagline--dark { color: var(--gold); }
+
+/* ---------- header / nav (sits on the forest band) ---------- */
 
 .site-header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 24px;
-  padding-bottom: 24px;
+  padding-top: 18px;
+  padding-bottom: 18px;
   gap: 20px;
 }
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  color: var(--paper);
-}
+.brand { display: block; }
 
-.brand-mark {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: var(--clay);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--serif);
-  font-weight: 700;
-  font-size: 16px;
-  color: var(--paper);
-  flex: none;
-}
-
-.brand-name {
-  font-family: var(--sans);
-  font-size: 12px;
-  letter-spacing: .26em;
-  text-transform: uppercase;
-  font-weight: 600;
+.brand img {
+  display: block;
+  height: 74px;
+  width: auto;
 }
 
 .site-nav {
   display: flex;
   gap: 32px;
-  font-family: var(--sans);
+  font-family: var(--utility);
+  font-weight: 600;
   font-size: 12px;
-  letter-spacing: .14em;
+  letter-spacing: .16em;
   text-transform: uppercase;
 }
 
 .site-nav a { color: var(--green-soft); }
-.site-nav a:hover { color: var(--paper); }
-.site-nav a[aria-current="page"] { color: var(--paper); font-weight: 600; }
+.site-nav a:hover { color: var(--cream); }
+.site-nav a[aria-current="page"] { color: var(--cream); }
 
-/* ---------- green band (hero on home, page header elsewhere) ---------- */
+/* ---------- forest band (hero on home, page header elsewhere) ---------- */
 
 .green-band {
-  background: var(--green-dark);
-  color: var(--paper);
+  background: var(--forest);
+  color: var(--cream);
+}
+
+.badge {
+  display: inline-block;
+  font-family: var(--utility);
+  font-size: 11.5px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--forest);
+  background: var(--badge-bg);
+  padding: 7px 14px;
+  font-weight: 600;
 }
 
 .hero .container {
-  padding-top: 64px;
-  padding-bottom: 76px;
+  padding-top: 56px;
+  padding-bottom: 72px;
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 60px;
   align-items: center;
 }
 
-.badge {
-  display: inline-block;
-  font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: .2em;
-  color: var(--green-dark);
-  background: var(--badge-bg);
-  padding: 7px 14px;
-  font-weight: 600;
-}
-
 .hero h1 {
-  font-family: var(--serif);
-  font-size: 88px;
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -.02em;
+  font-size: 74px;
+  font-weight: 600;
+  line-height: 1.02;
   margin: 24px 0 0;
 }
 
@@ -155,6 +160,35 @@ a:hover { color: var(--clay-dark); }
 .hero-photo { width: 340px; }
 .hero-photo svg { width: 100%; display: block; }
 
+/* branded placeholder frame in the hero (swap for a real photo later) */
+.hero-frame {
+  width: 100%;
+  height: 420px;
+  background: #28331e;
+  border: 1px solid #3c4a2e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  text-align: center;
+  padding: 30px;
+}
+
+.hero-frame img { width: 150px; height: 150px; }
+
+.hero-frame-title {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 27px;
+  line-height: 1.25;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--cream);
+}
+
+.hero-frame .tagline--dark { font-size: 11px; }
+
 /* ---------- email signup ---------- */
 
 .signup-form {
@@ -165,7 +199,7 @@ a:hover { color: var(--clay-dark); }
 }
 
 .signup-form input[type="email"] {
-  font-family: var(--mono);
+  font-family: var(--utility);
   font-size: 14px;
   padding: 14px 16px;
   border: none;
@@ -177,35 +211,35 @@ a:hover { color: var(--clay-dark); }
 }
 
 .signup-form button {
-  font-family: var(--sans);
+  font-family: var(--utility);
   font-size: 13px;
   font-weight: 600;
   letter-spacing: .1em;
   text-transform: uppercase;
-  background: var(--clay);
-  color: var(--paper);
+  background: var(--ochre);
+  color: var(--cream);
   border: none;
   padding: 14px 26px;
   cursor: pointer;
 }
 
-.signup-form button:hover { background: var(--clay-dark); }
+.signup-form button:hover { background: var(--bark); }
 
 /* keyboard-only focus ring; invisible to mouse users so the
-   reference's outline-free look is preserved */
+   outline-free look is preserved */
 .signup-form input[type="email"]:focus-visible {
-  outline: 2px solid var(--clay);
+  outline: 2px solid var(--ochre);
   outline-offset: 2px;
 }
 
 .form-note {
-  font-family: var(--mono);
+  font-family: var(--utility);
   font-size: 11.5px;
   color: var(--hero-muted);
   margin-top: 12px;
 }
 
-/* paper variant — used on the signup band of inner pages */
+/* paper variant — used on the reservation band of inner pages */
 .signup-band {
   background: var(--card);
   border-top: 1px solid var(--hairline);
@@ -218,9 +252,8 @@ a:hover { color: var(--clay-dark); }
 }
 
 .signup-band h2 {
-  font-family: var(--serif);
-  font-size: 32px;
-  font-weight: 700;
+  font-size: 30px;
+  font-weight: 600;
   margin: 0;
 }
 
@@ -247,7 +280,7 @@ a:hover { color: var(--clay-dark); }
 
 /* ---------- photo placeholders ---------- */
 
-.photo-placeholder text { font-family: var(--mono); }
+.photo-placeholder text { font-family: var(--utility); }
 
 /* ---------- promise cards ---------- */
 
@@ -262,28 +295,29 @@ a:hover { color: var(--clay-dark); }
 .promise-card {
   background: var(--card);
   border: 1px solid var(--hairline);
-  border-top: 4px solid var(--green-sage);
+  border-top: 4px solid var(--sage);
   padding: 22px 22px 24px;
 }
 
 .promise-card--ochre { border-top-color: var(--ochre); }
-.promise-card--clay { border-top-color: var(--clay); }
+.promise-card--bark { border-top-color: var(--bark); }
 
 .card-eyebrow {
-  font-family: var(--mono);
+  font-family: var(--utility);
   font-size: 11px;
-  color: var(--green-sage);
+  color: var(--sage);
   font-weight: 600;
-  letter-spacing: .12em;
+  letter-spacing: .14em;
+  text-transform: uppercase;
 }
 
 .promise-card--ochre .card-eyebrow { color: var(--ochre); }
-.promise-card--clay .card-eyebrow { color: var(--clay); }
+.promise-card--bark .card-eyebrow { color: var(--bark); }
 
 .card-title {
-  font-family: var(--serif);
-  font-size: 21px;
+  font-size: 19px;
   font-weight: 600;
+  letter-spacing: .05em;
   margin: 8px 0 6px;
 }
 
@@ -304,19 +338,18 @@ a:hover { color: var(--clay-dark); }
 }
 
 .section-eyebrow {
-  font-family: var(--sans);
-  font-size: 10px;
+  font-family: var(--utility);
+  font-size: 10.5px;
   letter-spacing: .28em;
   text-transform: uppercase;
-  color: var(--clay-dark);
+  color: var(--ochre);
   font-weight: 600;
 }
 
 .band-2col h2,
 .section h2 {
-  font-family: var(--serif);
-  font-size: 32px;
-  font-weight: 700;
+  font-size: 30px;
+  font-weight: 600;
   margin: 8px 0 14px;
 }
 
@@ -327,18 +360,18 @@ a:hover { color: var(--clay-dark); }
 }
 
 .chip {
-  font-family: var(--sans);
+  font-family: var(--utility);
   font-size: 13px;
   font-weight: 600;
-  border: 1.5px solid var(--green-sage);
-  color: var(--green-dark);
+  border: 1.5px solid var(--sage);
+  color: var(--forest);
   padding: 8px 14px;
 }
 
 .chip--honey {
-  background: var(--ochre);
-  border-color: var(--ochre);
-  color: #fbf8f0;
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #fbf6ea;
 }
 
 .band-note {
@@ -357,15 +390,17 @@ a:hover { color: var(--clay-dark); }
 }
 
 .timeline-date {
-  font-family: var(--mono);
+  font-family: var(--utility);
   font-size: 11.5px;
   font-weight: 600;
-  color: var(--green-sage);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--sage);
 }
 
 .timeline-date--ochre { color: var(--ochre); }
-.timeline-date--clay { color: var(--clay); }
-.timeline-date--slate { color: var(--slate); }
+.timeline-date--bark { color: var(--bark); }
+.timeline-date--gold { color: var(--gold); }
 
 .timeline-desc {
   font-size: 13.5px;
@@ -376,24 +411,22 @@ a:hover { color: var(--clay-dark); }
 /* ---------- inner pages (about / contact) ---------- */
 
 .page-header .container {
-  padding-top: 56px;
+  padding-top: 48px;
   padding-bottom: 64px;
 }
 
 .page-header h1 {
-  font-family: var(--serif);
-  font-size: 56px;
-  font-weight: 700;
-  line-height: 1.05;
-  letter-spacing: -.02em;
+  font-size: 50px;
+  font-weight: 600;
+  line-height: 1.08;
   margin: 20px 0 0;
-  max-width: 720px;
+  max-width: 780px;
 }
 
 .page-header .hero-lede { margin-top: 20px; }
 
 .eyebrow-on-green {
-  font-family: var(--sans);
+  font-family: var(--utility);
   font-size: 11px;
   letter-spacing: .32em;
   text-transform: uppercase;
@@ -427,7 +460,7 @@ a:hover { color: var(--clay-dark); }
 }
 
 .figure-caption {
-  font-family: var(--mono);
+  font-family: var(--utility);
   font-size: 11px;
   color: var(--muted);
   line-height: 1.5;
@@ -435,8 +468,8 @@ a:hover { color: var(--clay-dark); }
 }
 
 .quote-band {
-  background: var(--green-sage);
-  color: var(--paper);
+  background: var(--sage);
+  color: var(--cream);
 }
 
 .quote-band .container {
@@ -451,28 +484,28 @@ a:hover { color: var(--clay-dark); }
 }
 
 .quote-band .quote-eyebrow {
-  font-family: var(--sans);
-  font-size: 10px;
+  font-family: var(--utility);
+  font-size: 10.5px;
   letter-spacing: .3em;
   text-transform: uppercase;
-  color: var(--green-soft);
+  color: #e9e4d0;
   font-weight: 600;
 }
 
 .quote-band p {
-  font-family: var(--serif);
-  font-size: 26px;
-  line-height: 1.5;
-  font-weight: 300;
+  font-family: var(--display);
+  font-size: 30px;
+  line-height: 1.45;
+  font-weight: 500;
   margin: 16px 0 0;
 }
 
 .quote-band cite {
   display: block;
-  font-family: var(--mono);
+  font-family: var(--utility);
   font-style: normal;
   font-size: 13px;
-  color: var(--green-soft);
+  color: #e9e4d0;
   margin-top: 18px;
 }
 
@@ -488,7 +521,7 @@ a:hover { color: var(--clay-dark); }
 }
 
 .notice-label {
-  font-family: var(--mono);
+  font-family: var(--utility);
   font-size: 11px;
   color: var(--ochre);
   font-weight: 600;
@@ -513,23 +546,23 @@ a:hover { color: var(--clay-dark); }
 .share-card {
   background: var(--card);
   border: 1px solid var(--hairline);
-  border-top: 4px solid var(--green-sage);
+  border-top: 4px solid var(--sage);
   padding: 22px 22px 24px;
 }
 
-.share-card--clay { border-top-color: var(--clay); }
-.share-card--clay .card-eyebrow { color: var(--clay); }
+.share-card--ochre { border-top-color: var(--ochre); }
+.share-card--ochre .card-eyebrow { color: var(--ochre); }
 
 .share-price {
-  font-family: var(--serif);
-  font-size: 40px;
-  font-weight: 700;
+  font-family: var(--display);
+  font-size: 42px;
+  font-weight: 600;
   line-height: 1;
   margin-top: 10px;
 }
 
 .share-per {
-  font-family: var(--mono);
+  font-family: var(--utility);
   font-size: 12px;
   font-weight: 400;
   color: var(--muted);
@@ -537,7 +570,7 @@ a:hover { color: var(--clay-dark); }
 }
 
 .share-season {
-  font-family: var(--mono);
+  font-family: var(--utility);
   font-size: 11.5px;
   color: var(--ochre);
   font-weight: 600;
@@ -553,23 +586,23 @@ a:hover { color: var(--clay-dark); }
 
 .button-link {
   display: inline-block;
-  font-family: var(--sans);
+  font-family: var(--utility);
   font-size: 13px;
   font-weight: 600;
   letter-spacing: .1em;
   text-transform: uppercase;
-  background: var(--clay);
-  color: var(--paper);
+  background: var(--ochre);
+  color: var(--cream);
   padding: 14px 26px;
   margin-top: 24px;
 }
 
-.button-link:hover { background: var(--clay-dark); color: var(--paper); }
+.button-link:hover { background: var(--bark); color: var(--cream); }
 
 /* contact info list */
 .contact-list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 18px;
   margin-top: 28px;
 }
@@ -577,12 +610,12 @@ a:hover { color: var(--clay-dark); }
 .contact-card {
   background: var(--card);
   border: 1px solid var(--hairline);
-  border-top: 4px solid var(--green-sage);
+  border-top: 4px solid var(--sage);
   padding: 22px 22px 24px;
 }
 
-.contact-card--clay { border-top-color: var(--clay); }
-.contact-card--clay .card-eyebrow { color: var(--clay); }
+.contact-card--ochre { border-top-color: var(--ochre); }
+.contact-card--ochre .card-eyebrow { color: var(--ochre); }
 
 .contact-card p {
   font-size: 14.5px;
@@ -592,23 +625,24 @@ a:hover { color: var(--clay-dark); }
 }
 
 .contact-card .big-link {
-  font-family: var(--serif);
-  font-size: 21px;
+  font-family: var(--body-face);
+  font-size: 19px;
   font-weight: 600;
   margin: 8px 0 0;
   display: inline-block;
+  overflow-wrap: anywhere;
 }
 
-/* ---------- footer ---------- */
+/* ---------- footer (cream on forest) ---------- */
 
 .site-footer {
-  background: var(--ink);
-  color: var(--muted);
+  background: var(--forest);
+  color: var(--hero-muted);
 }
 
 .site-footer .container {
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 34px;
+  padding-bottom: 34px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -616,21 +650,26 @@ a:hover { color: var(--clay-dark); }
 }
 
 .footer-brand {
-  font-family: var(--serif);
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--paper);
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--cream);
+}
+
+.footer-brand + .tagline--dark {
+  display: block;
+  font-size: 10.5px;
+  margin-top: 4px;
 }
 
 .footer-info {
-  font-family: var(--sans);
+  font-family: var(--utility);
   font-size: 11.5px;
   letter-spacing: .1em;
   text-transform: uppercase;
 }
 
-.footer-info a { color: var(--muted); }
-.footer-info a:hover { color: var(--paper); }
+.footer-info a { color: var(--hero-muted); }
+.footer-info a:hover { color: var(--cream); }
 
 /* ============================================================
    Responsive
@@ -642,15 +681,14 @@ a:hover { color: var(--clay-dark); }
     gap: 40px;
   }
 
-  .hero h1 { font-size: 52px; }
-  .page-header h1 { font-size: 44px; }
+  .hero h1 { font-size: 46px; }
+  .page-header h1 { font-size: 38px; }
 
   .hero-photo { width: 100%; max-width: 340px; }
 
   .promises .container { grid-template-columns: 1fr; }
   .band-2col .container { grid-template-columns: 1fr; }
   .two-up { grid-template-columns: 1fr; }
-  .contact-list { grid-template-columns: 1fr; }
   .share-grid { grid-template-columns: 1fr; }
 
   .site-footer .container {
@@ -669,11 +707,13 @@ a:hover { color: var(--clay-dark); }
     gap: 16px;
   }
 
+  .brand img { height: 64px; }
+
   .site-nav { gap: 22px; }
 
-  .hero .container { padding-top: 40px; padding-bottom: 48px; }
-  .hero h1 { font-size: 44px; }
-  .page-header h1 { font-size: 36px; }
+  .hero .container { padding-top: 36px; padding-bottom: 48px; }
+  .hero h1 { font-size: 38px; }
+  .page-header h1 { font-size: 31px; }
 
   .signup-form { flex-direction: column; }
   .signup-form button { width: 100%; }

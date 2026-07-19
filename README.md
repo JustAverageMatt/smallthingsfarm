@@ -15,8 +15,27 @@ Columbus, Ohio, breaking ground in 2027. Plain HTML/CSS — no build step, no fr
 | `404.html` | Not-found page |
 
 `design_handoff_smallthingsfarm_site/` is the original design handoff (option 1C,
-"The Roadside Stand", is the implemented design). It is kept for reference only and
+"The Roadside Stand", is the implemented layout). It is kept for reference only and
 is not part of the deployed site.
+
+## Brand (July 2026 identity)
+
+The site follows the **Brand & Identity Guide v1.0** (July 2026). Key facts:
+
+- **Palette** — Forest `#2E3C23` (primary ink & ground), Sage `#737C60`,
+  Cream `#F3E9D9` (paper), Ochre `#9B6223` (accent/CTAs, never a field color),
+  Bark `#4D361D`, Gold `#B0813B` (ochre lifted for dark grounds).
+- **Type** — Cormorant Garamond SemiBold for display (always ALL CAPS, tracked);
+  Source Serif 4 for body and utility caps (fallback Georgia). Loaded from
+  Google Fonts.
+- **Tagline** — `THE SMALL THINGS MATTER.` — always caps, always with the period.
+  Ochre on light grounds, gold on dark.
+- **Logo kit** — `assets/brand/` holds the outlined production SVGs
+  (logos, icons, lockups). `04-horizontal-wordmark-cream.svg` is a
+  recolor of the wordmark (forest→cream, ochre→gold) generated for the site
+  header, which sits on Forest. The favicon is `icons/icon-roundel-forest.svg`.
+  Full kit incl. editable text + Cormorant Garamond TTFs lives in the
+  downloaded `Small-Things-Farm-Logo-Kit.zip` (not committed).
 
 ## Deployment (GitHub Pages + Porkbun)
 
