@@ -178,8 +178,6 @@ h1, h2, .card-title, .footer-brand {
   padding: 30px;
 }
 
-.hero-frame img { width: 150px; height: 150px; }
-
 .hero-frame-title {
   font-family: var(--display);
   font-weight: 600;
