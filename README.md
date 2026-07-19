@@ -31,9 +31,11 @@ The site follows the **Brand & Identity Guide v1.0** (July 2026). Key facts:
 - **Tagline** — `THE SMALL THINGS MATTER.` — always caps, always with the period.
   Ochre on light grounds, gold on dark.
 - **Logo kit** — `assets/brand/` holds the outlined production SVGs
-  (logos, icons, lockups). `04-horizontal-wordmark-cream.svg` is a
-  recolor of the wordmark (forest→cream, ochre→gold) generated for the site
-  header, which sits on Forest. The favicon is `icons/icon-roundel-forest.svg`.
+  (logos, icons, lockups). The site header is the full-width
+  `lockups/banner-lockup.svg` (badge + name + tagline, on Forest) with the
+  nav menu centered beneath it. `04-horizontal-wordmark-cream.svg` is a
+  recolor of the wordmark (forest→cream, ochre→gold) kept for other
+  dark-ground uses. The favicon is `icons/icon-roundel-forest.svg`.
   Full kit incl. editable text + Cormorant Garamond TTFs lives in the
   downloaded `Small-Things-Farm-Logo-Kit.zip` (not committed).
 

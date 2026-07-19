@@ -81,28 +81,31 @@ h1, h2, .card-title, .footer-brand {
 
 .tagline--dark { color: var(--gold); }
 
-/* ---------- header / nav (sits on the forest band) ---------- */
+/* ---------- header: banner lockup on forest, nav beneath ---------- */
 
-.site-header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 18px;
-  padding-bottom: 18px;
-  gap: 20px;
+.site-header { padding-top: 28px; }
+
+/* the banner lockup SVG carries its own Forest ground, so it
+   blends into the band at any width */
+.brand {
+  display: block;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 var(--pad-x);
 }
-
-.brand { display: block; }
 
 .brand img {
   display: block;
-  height: 74px;
-  width: auto;
+  width: 100%;
+  height: auto;
 }
 
 .site-nav {
   display: flex;
-  gap: 32px;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 36px;
+  padding: 20px var(--pad-x) 6px;
   font-family: var(--utility);
   font-weight: 600;
   font-size: 12px;
@@ -701,15 +704,9 @@ h1, h2, .card-title, .footer-brand {
 @media (max-width: 600px) {
   :root { --pad-x: 24px; }
 
-  .site-header .container {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-  }
-
-  .brand img { height: 64px; }
-
-  .site-nav { gap: 22px; }
+  .site-header { padding-top: 18px; }
+  .brand { padding: 0 12px; }
+  .site-nav { gap: 20px; padding-top: 14px; }
 
   .hero .container { padding-top: 36px; padding-bottom: 48px; }
   .hero h1 { font-size: 38px; }
